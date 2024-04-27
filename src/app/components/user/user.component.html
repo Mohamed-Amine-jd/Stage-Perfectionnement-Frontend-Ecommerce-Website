@@ -1,0 +1,38 @@
+
+
+<app-header-admin></app-header-admin><br><br>
+<div class="container">
+
+    <table class="table">
+        <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Prénom</th>
+              <th>Téléphone</th>
+              <th>Adresse</th>
+              <th>Signale</th>
+              <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td >{{ user.nom }}</td>
+            <td >{{ user.prenom }}</td>
+            <td >{{ user.phone }}</td>
+            <td >{{ user.adresse }}</td>
+            <td >{{ user.minus }}</td>
+            <td>
+              <button (click)="deleteuser(user)" 
+              [disabled]="user.minus <= 2" 
+              [class.couleurFaible]="user.minus <= 2"
+              [class.couleurRouge]="user.minus > 2">
+        Archiver
+      </button>
+      
+            </td>
+        </tr>
+        
+        </tbody>
+    </table>
+  </div>
+

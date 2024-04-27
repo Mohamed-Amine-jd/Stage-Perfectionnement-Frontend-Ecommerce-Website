@@ -1,0 +1,30 @@
+<app-header-admin></app-header-admin><br><br>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Téléphone</th>
+                <th>Adresse</th>
+                <th>Action</th>
+                <!-- Vous pouvez ajouter d'autres colonnes en fonction de vos besoins -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let payment of payments">
+                <td>{{ payment.nom }}</td>
+                <td>{{ payment.prenom }}</td>
+                <td>{{ payment.phoneuser }}</td>
+                <td>{{ payment.address }}</td>
+                
+                
+                 <td>
+                    <button  (click)="deletepay(payment)">Archiver</button>
+                  </td>
+               
+                
+            </tr>
+        </tbody>
+    </table>
+  </div>
